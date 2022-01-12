@@ -1,11 +1,11 @@
 let ctx = document.getElementById('yearMainChart').getContext('2d');
-let myChart = new Chart(ctx, {
+let yearMainChart = new Chart(ctx, {
     type: 'bar',
     data: {
         
         labels: ['2015', '2016', '2017', '2018', '2019', '2020', '2021'],
         datasets: [{
-            label: '# of Votes',
+            label: 'значение',
             data: [10, 12, 19, 17, 18, 19.5, 19],
             backgroundColor: [
                 'rgba(255, 99, 132, 1)'
@@ -17,6 +17,15 @@ let myChart = new Chart(ctx, {
         }]
     },
     options: {
+        animations: {
+            tension: {
+              duration: 3000,
+              easing: 'linear',
+              from: 1,
+              to: 0,
+              loop: false
+            }
+        },
         plugins: {
             legend: {
                 display: false
@@ -47,10 +56,13 @@ let monthMainChart = new Chart(ctx2, {
     type: 'bar',
     data: {
         
-        labels: ['2015', '2016', '2017', '2018', '2019', '2020', '2021'],
+        labels: [
+            'янв', 'фев', 'мар', 'апр', 'май', 'июн', 
+            'июл','авг', 'сен', 'окт', 'ноя', 'дек'
+        ],
         datasets: [{
-            label: '# of Votes',
-            data: [10, 12, 19, 17, 18, 19.5, 19],
+            label: 'значение',
+            data: [10, 12, 19, 17, 18, 19.5, 19, 19, 19, 19, 19, 19],
             backgroundColor: [
                 'rgba(101, 25, 252, 1)'
             ],
@@ -93,12 +105,12 @@ let averageRateByDepartment = new Chart(ctx3, {
         
         labels: ['Отдел 1', 'Отдел 2', 'Отдел 3', 'Отдел 4', 'Отдел 5', 'Отдел 6', 'Отдел 7'],
         datasets: [{
-            label: '# of Votes',
+            label: 'значение',
             data: [30, 24, 22, 20, 18, 16, 11],
             backgroundColor: [
                 'rgba(252, 25, 252, 1)', 'rgba(255, 25, 54, 1)', 
                 'rgba(44, 25, 203, 1)', 'rgba(44, 254, 38, 1)',
-                'rgba(213, 123, 37, 1)', 'rgba(194, 82, 144, 1)',
+                'rgba(213, 123, 37, 1)', 'rgba(246, 250, 45, 1)',
                 'rgba(102, 255, 183, 1)'
             ],
             borderColor: [
@@ -140,12 +152,12 @@ let departmentAverageDoughnut = new Chart(ctx4, {
         
         labels: ['Отдел 1', 'Отдел 2', 'Отдел 3', 'Отдел 4', 'Отдел 5', 'Отдел 6', 'Отдел 7'],
         datasets: [{
-            label: '# of Votes',
+            label: 'значение',
             data: [30, 24, 22, 20, 18, 16, 11],
             backgroundColor: [
                 'rgba(252, 25, 252, 1)', 'rgba(255, 25, 54, 1)', 
                 'rgba(44, 25, 203, 1)', 'rgba(44, 254, 38, 1)',
-                'rgba(213, 123, 37, 1)', 'rgba(194, 82, 144, 1)',
+                'rgba(213, 123, 37, 1)', 'rgba(246, 250, 45, 1)',
                 'rgba(102, 255, 183, 1)'
             ],
             borderColor: [
@@ -198,12 +210,12 @@ let departmentAverageDoughnutPerPerson = new Chart(ctx5, {
         
         labels: ['Отдел 1', 'Отдел 2', 'Отдел 3', 'Отдел 4', 'Отдел 5', 'Отдел 6', 'Отдел 7'],
         datasets: [{
-            label: '# of Votes',
+            label: 'значение',
             data: [30, 24, 22, 20, 18, 16, 11],
             backgroundColor: [
                 'rgba(252, 25, 252, 1)', 'rgba(255, 25, 54, 1)', 
                 'rgba(44, 25, 203, 1)', 'rgba(44, 254, 38, 1)',
-                'rgba(213, 123, 37, 1)', 'rgba(194, 82, 144, 1)',
+                'rgba(213, 123, 37, 1)', 'rgba(246, 250, 45, 1)',
                 'rgba(102, 255, 183, 1)'
             ],
             borderColor: [
@@ -255,7 +267,7 @@ let ageScatter = new Chart(ctx6, {
         
         labels: ['Отдел 1', 'Отдел 2', 'Отдел 3', 'Отдел 4', 'Отдел 5', 'Отдел 6', 'Отдел 7'],
         datasets: [{
-            label: '# of Votes',
+            label: 'значение',
             data: [{
                 x: 5,
                 y: 4
@@ -288,10 +300,7 @@ let ageScatter = new Chart(ctx6, {
                 y: 12
             }],
             backgroundColor: [
-                'rgba(252, 25, 252, 1)', 'rgba(255, 25, 54, 1)', 
-                'rgba(44, 25, 203, 1)', 'rgba(44, 254, 38, 1)',
-                'rgba(213, 123, 37, 1)', 'rgba(194, 82, 144, 1)',
-                'rgba(102, 255, 183, 1)'
+                'rgba(252, 25, 252, 1)'
             ],
             borderColor: [
                 'rgba(255, 99, 132, 1)'
@@ -302,7 +311,7 @@ let ageScatter = new Chart(ctx6, {
     options: {
         plugins: {
             legend: {
-                display: true
+                display: false
             }
         },
         
@@ -322,3 +331,35 @@ let ageScatter = new Chart(ctx6, {
         }
     }
 });
+
+let yearSelect = document.getElementById('year-select')
+let averageValue = document.getElementById('average-value')
+let medianValue = document.getElementById('median-value')
+
+yearSelect.onchange = function() {
+
+    let year = yearSelect.value
+
+    averageValue.innerHTML = analysisData['averageValue'][year]
+    medianValue.innerHTML = analysisData['medianValue'][year]
+
+    monthMainChart.data.datasets[0].data = 
+        analysisData['monthMainChart'][year]
+    monthMainChart.update()
+
+    averageRateByDepartment.data.datasets[0].data = 
+        analysisData['averageRateByDepartment'][year]
+    averageRateByDepartment.update()
+
+    departmentAverageDoughnut.data.datasets[0].data = 
+        analysisData['departmentAverageDoughnut'][year]
+    departmentAverageDoughnut.update()
+
+    departmentAverageDoughnutPerPerson.data.datasets[0].data = 
+        analysisData['departmentAverageDoughnutPerPerson'][year]
+    departmentAverageDoughnutPerPerson.update()
+
+    ageScatter.data.datasets[0].data = 
+        analysisData['ageScatter'][year]
+    ageScatter.update()
+}

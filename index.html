@@ -5,29 +5,32 @@
             href="bootstrap-4.6.1-dist/css/bootstrap.css">
         <script src="jquery-3.6.0.js"></script>
         <script src="bootstrap-4.6.1-dist/js/bootstrap.js"></script> -->
+        <script src="data.js"></script>
         <script src="chart.js-3.7.0-dist/chart.min.js"></script>
     </head>
     <body>
         <div id="container">
             <div>
-                <h1>Аналитические данные <br>по зарплатам за <select>
-                    <option>2021</option>
-                    <option>2020</option>
-                    <option>2019</option>
-                    <option>2018</option>
-                    <option>2017</option>
-                    <option>2016</option>
+                <h1>Аналитические данные <br>по зарплатам за <select 
+                    id="year-select">
+                    <option value="2021">2021</option>
+                    <option value="2020">2020</option>
+                    <option value="2019">2019</option>
+                    <option value="2018">2018</option>
+                    <option value="2017">2017</option>
+                    <option value="2016">2016</option>
+                    <option value="2015">2015</option>
                 </select> год</h1>
             </div>
-            <div>
+            <div class="flex">
                 <div class="inline-block col-2 graph-block-2">
-                    <div>Среднее значение</div>
-                    <div id="average-value">38 500 руб.</div>
-                    <div id="median-value">Медианное значение</div>
-                    <div>25 750 руб.</div>
+                    <div>Среднее значение, руб.</div>
+                    <div id="average-value">38 500</div>
+                    <div>Медианное значение, руб.</div>
+                    <div id="median-value">25 750</div>
                 </div
                 ><div class="inline-block col-2 graph-block-2">
-                    <div class="chart_label">
+                    <div class="chart-label">
                         Среднее значение по отделам
                     </div>
                     <canvas 
@@ -37,9 +40,9 @@
                 </div>
             </div>
             <div>
-                <div>
+                <div class="flex">
                     <div class="inline-block col-2 graph-block-2">
-                        <div class="chart_label">
+                        <div class="chart-label">
                             Общие выплаты по годам
                         </div>
                         <canvas 
@@ -48,7 +51,7 @@
                         </canvas>
                     </div
                     ><div class="inline-block col-2 graph-block-2">
-                        <div class="chart_label">
+                        <div class="chart-label">
                             Общие выплаты по месяцам
                         </div>
                         <canvas 
@@ -59,18 +62,99 @@
                 </div>
             </div>
             <div>
-                <div class="flex">
+                <div class="flex doughnut-parent">
                     <div class="inline-block col-2 graph-block-2 doughnut">
-                        <div class="chart_label">
+                        <div class="chart-label">
                             Среднее значение по отделам
                         </div>
                         <canvas 
                             id="departmentAverageDoughnut" 
                             width="200" height="100">
                         </canvas>
-                    </div
-                    ><div class="inline-block col-2 graph-block-2 doughnut">
-                        <div class="chart_label">
+                    </div>
+                    <div id="legend">
+                        <table>
+                            <tr class="legend-row">
+                                <td>
+                                    <div class="legend-cube"
+                                        style="height: 20px; width: 20px; 
+                                            background-color: #fc19fc;"
+                                    ></div>
+                                </td>
+                                <td>
+                                    Отдел 1
+                                </td>
+                            </tr>
+                            <tr class="legend-row">
+                                <td>
+                                    <div class="legend-cube"
+                                        style="height: 20px; width: 20px; 
+                                            background-color: #ff1936;"
+                                    ></div>
+                                </td>
+                                <td>
+                                    Отдел 2
+                                </td>
+                            </tr>
+                            <tr class="legend-row">
+                                <td>
+                                    <div class="legend-cube"
+                                        style="height: 20px; width: 20px; 
+                                            background-color: #2c19cb;"
+                                    ></div>
+                                </td>
+                                <td>
+                                    Отдел 3
+                                </td>
+                            </tr>
+                            <tr class="legend-row">
+                                <td>
+                                    <div class="legend-cube"
+                                        style="height: 20px; width: 20px; 
+                                            background-color: #2cfe26;"
+                                    ></div>
+                                </td>
+                                <td>
+                                    Отдел 4
+                                </td>
+                            </tr>
+                            <tr class="legend-row">
+                                <td>
+                                    <div class="legend-cube"
+                                        style="height: 20px; width: 20px; 
+                                            background-color: #d57b25;"
+                                    ></div>
+                                </td>
+                                <td>
+                                    Отдел 5
+                                </td>
+                            </tr>
+                            <tr class="legend-row">
+                                <td>
+                                    <div class="legend-cube"
+                                        style="height: 20px; width: 20px; 
+                                            background-color: #f6fa2d;"
+                                    ></div>
+                                </td>
+                                <td>
+                                    Отдел 6
+                                </td>
+                            </tr>
+                            <tr class="legend-row">
+                                <td>
+                                    <div class="legend-cube"
+                                        style="height: 20px; width: 20px; 
+                                            background-color: #66ffb7;"
+                                    ></div>
+                                </td>
+                                <td>
+                                    Отдел 7
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="inline-block col-2 graph-block-2 doughnut">
+                        <div class="chart-label">
                             Среднее значение по отделам на одного человека
                         </div>
                         <canvas 
@@ -82,7 +166,7 @@
             </div>
             <div>
                 <div class="graph-block-1">
-                    <div class="chart_label">
+                    <div class="chart-label">
                         Разброс полученных выплат по возрасту сотрудников
                     </div>
                     <canvas 

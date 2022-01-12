@@ -14,16 +14,26 @@ body {
     margin: 0px auto;
 }
 
-/* .graph-block-2 {
-    
-} */
+.graph-block-2, .graph-block-1 {
+/*     outline: 1px dotted red; */
+    margin: 30px 0px;
+}
 
 .doughnut {
     width: 30% !important;
 }
 
+.doughnut .chart-label {
+    margin: 10px;
+}
+
+.chart-label {
+    font-size: 21px;
+    margin-bottom: 15px;
+}
+
 .col-2 {
-    width: 50%;
+    width: 40%;
 }
 
 .inline-block {
@@ -38,6 +48,23 @@ select {
     text-align:center;
 }
 
-div {
+/* div {
     outline: 1px solid red;
+} */
+
+.flex {
+    display: inline-flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#average-value, #median-value {
+    font-size: 50px;
+/*     background: yellow; */
+}
+
+#legend {
+/*     position:absolute; */
 }
