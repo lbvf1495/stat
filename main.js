@@ -8,12 +8,12 @@ let myChart = new Chart(ctx, {
             label: '# of Votes',
             data: [10, 12, 19, 17, 18, 19.5, 19],
             backgroundColor: [
-                'rgba(255, 99, 132, 0.2)'
+                'rgba(255, 99, 132, 1)'
             ],
             borderColor: [
                 'rgba(255, 99, 132, 1)'
             ],
-            borderWidth: 1
+            borderWidth: 0,
         }]
     },
     options: {
@@ -25,7 +25,18 @@ let myChart = new Chart(ctx, {
         
         scales: {
             y: {
-                beginAtZero: true
+                beginAtZero: true,
+                ticks: {
+                    color: "black"
+                }
+            },
+            x: {
+                grid: {
+                    display: false
+                },
+                ticks: {
+                    color: "black"
+                }
             }
         }
     }
@@ -41,12 +52,12 @@ let monthMainChart = new Chart(ctx2, {
             label: '# of Votes',
             data: [10, 12, 19, 17, 18, 19.5, 19],
             backgroundColor: [
-                'rgba(255, 99, 132, 0.2)'
+                'rgba(101, 25, 252, 1)'
             ],
             borderColor: [
                 'rgba(255, 99, 132, 1)'
             ],
-            borderWidth: 1
+            borderWidth: 0
         }]
     },
     options: {
@@ -58,7 +69,18 @@ let monthMainChart = new Chart(ctx2, {
         
         scales: {
             y: {
-                beginAtZero: true
+                beginAtZero: true,
+                ticks: {
+                    color: "black"
+                }
+            },
+            x: {
+                grid: {
+                    display: false
+                },
+                ticks: {
+                    color: "black"
+                }
             }
         }
     }
@@ -74,12 +96,15 @@ let averageRateByDepartment = new Chart(ctx3, {
             label: '# of Votes',
             data: [30, 24, 22, 20, 18, 16, 11],
             backgroundColor: [
-                'rgba(255, 99, 132, 0.2)'
+                'rgba(252, 25, 252, 1)', 'rgba(255, 25, 54, 1)', 
+                'rgba(44, 25, 203, 1)', 'rgba(44, 254, 38, 1)',
+                'rgba(213, 123, 37, 1)', 'rgba(194, 82, 144, 1)',
+                'rgba(102, 255, 183, 1)'
             ],
             borderColor: [
                 'rgba(255, 99, 132, 1)'
             ],
-            borderWidth: 1
+            borderWidth: 0
         }]
     },
     options: {
@@ -91,7 +116,18 @@ let averageRateByDepartment = new Chart(ctx3, {
         
         scales: {
             y: {
-                beginAtZero: true
+                beginAtZero: true,
+                ticks: {
+                    color: "black"
+                }
+            },
+            x: {
+                grid: {
+                    display: false
+                },
+                ticks: {
+                    color: "black"
+                }
             }
         }
     }
@@ -107,12 +143,15 @@ let departmentAverageDoughnut = new Chart(ctx4, {
             label: '# of Votes',
             data: [30, 24, 22, 20, 18, 16, 11],
             backgroundColor: [
-                'rgba(255, 99, 132, 0.2)'
+                'rgba(252, 25, 252, 1)', 'rgba(255, 25, 54, 1)', 
+                'rgba(44, 25, 203, 1)', 'rgba(44, 254, 38, 1)',
+                'rgba(213, 123, 37, 1)', 'rgba(194, 82, 144, 1)',
+                'rgba(102, 255, 183, 1)'
             ],
             borderColor: [
                 'rgba(255, 99, 132, 1)'
             ],
-            borderWidth: 1
+            borderWidth: 0
         }]
     },
     options: {
@@ -123,8 +162,29 @@ let departmentAverageDoughnut = new Chart(ctx4, {
         },
         
         scales: {
+            x: {
+                display: false,
+                grid: {
+                  display: false,
+                  drawBorder: false,
+                  drawOnChartArea: false,
+                  drawTicks: false,
+                },
+                ticks: {
+                    color: "black"
+                }
+            },
             y: {
-                beginAtZero: true
+                display: false,
+                grid: {
+                    display: false,
+                    drawBorder: false,
+                    drawOnChartArea: false,
+                    drawTicks: false,
+                },
+                ticks: {
+                    color: "black"
+                }
             }
         }
     }
@@ -141,12 +201,15 @@ let departmentAverageDoughnutPerPerson = new Chart(ctx5, {
             label: '# of Votes',
             data: [30, 24, 22, 20, 18, 16, 11],
             backgroundColor: [
-                'rgba(255, 99, 132, 0.2)'
+                'rgba(252, 25, 252, 1)', 'rgba(255, 25, 54, 1)', 
+                'rgba(44, 25, 203, 1)', 'rgba(44, 254, 38, 1)',
+                'rgba(213, 123, 37, 1)', 'rgba(194, 82, 144, 1)',
+                'rgba(102, 255, 183, 1)'
             ],
             borderColor: [
                 'rgba(255, 99, 132, 1)'
             ],
-            borderWidth: 1
+            borderWidth: 0
         }]
     },
     options: {
@@ -157,8 +220,29 @@ let departmentAverageDoughnutPerPerson = new Chart(ctx5, {
         },
         
         scales: {
+            x: {
+                display: false,
+                grid: {
+                  display: false,
+                  drawBorder: false,
+                  drawOnChartArea: false,
+                  drawTicks: false,
+                },
+                ticks: {
+                    color: "black"
+                }
+            },
             y: {
-                beginAtZero: true
+                display: false,
+                grid: {
+                    display: false,
+                    drawBorder: false,
+                    drawOnChartArea: false,
+                    drawTicks: false,
+                },
+                ticks: {
+                    color: "black"
+                }
             }
         }
     }
@@ -204,12 +288,15 @@ let ageScatter = new Chart(ctx6, {
                 y: 12
             }],
             backgroundColor: [
-                'rgba(255, 99, 132, 0.2)'
+                'rgba(252, 25, 252, 1)', 'rgba(255, 25, 54, 1)', 
+                'rgba(44, 25, 203, 1)', 'rgba(44, 254, 38, 1)',
+                'rgba(213, 123, 37, 1)', 'rgba(194, 82, 144, 1)',
+                'rgba(102, 255, 183, 1)'
             ],
             borderColor: [
                 'rgba(255, 99, 132, 1)'
             ],
-            borderWidth: 1
+            borderWidth: 0
         }]
     },
     options: {
@@ -221,7 +308,16 @@ let ageScatter = new Chart(ctx6, {
         
         scales: {
             y: {
-                beginAtZero: true
+                beginAtZero: true,
+                ticks: {
+                    color: "black"
+                }
+            },
+            y: {
+                beginAtZero: true,
+                ticks: {
+                    color: "black"
+                }
             }
         }
     }

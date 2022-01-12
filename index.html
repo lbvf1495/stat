@@ -8,90 +8,91 @@
         <script src="chart.js-3.7.0-dist/chart.min.js"></script>
     </head>
     <body>
-        <div>
-            Аналитические данные по зарплатам за 
-            <select>
-                <option>2021</option>
-                <option>2020</option>
-                <option>2019</option>
-                <option>2018</option>
-                <option>2017</option>
-                <option>2016</option>
-            </select>
-            год
-        </div>
-        <div>
-            <div class="inline-block col-2">
-                <div>Среднее значение:</div>
-                <div>38 500 руб.</div>
-                <div>Медианное значение:</div>
-                <div>25 750 руб.</div>
-            </div
-            ><div class="inline-block col-2">
-                <div>
-                    Среднее значение по отделам:
-                </div>
-                <canvas 
-                    id="averageRateByDepartment" 
-                    width="200" height="100">
-                </canvas>
-            </div>
-        </div>
-        <div>
+        <div id="container">
             <div>
-                <div class="inline-block col-2">
-                    <div>
-                        Общие выплаты по годам
-                    </div>
-                    <canvas 
-                        id="yearMainChart" 
-                        width="200" height="100">
-                    </canvas>
+                <h1>Аналитические данные <br>по зарплатам за <select>
+                    <option>2021</option>
+                    <option>2020</option>
+                    <option>2019</option>
+                    <option>2018</option>
+                    <option>2017</option>
+                    <option>2016</option>
+                </select> год</h1>
+            </div>
+            <div>
+                <div class="inline-block col-2 graph-block-2">
+                    <div>Среднее значение</div>
+                    <div id="average-value">38 500 руб.</div>
+                    <div id="median-value">Медианное значение</div>
+                    <div>25 750 руб.</div>
                 </div
-                ><div class="inline-block col-2">
-                    <div>
-                        Общие выплаты по месяцам
-                    </div>
-                    <canvas 
-                        id="monthMainChart" 
-                        width="200" height="100">
-                    </canvas>
-                </div>
-            </div>
-        </div>
-        <div>
-            <div>
-                <div class="inline-block col-2">
-                    <div>
+                ><div class="inline-block col-2 graph-block-2">
+                    <div class="chart_label">
                         Среднее значение по отделам
                     </div>
                     <canvas 
-                        id="departmentAverageDoughnut" 
-                        width="200" height="100">
-                    </canvas>
-                </div
-                ><div class="inline-block col-2">
-                    <div>
-                        Среднее значение по отделам на одного человека
-                    </div>
-                    <canvas 
-                        id="departmentAverageDoughnutPerPerson" 
+                        id="averageRateByDepartment" 
                         width="200" height="100">
                     </canvas>
                 </div>
             </div>
-        </div>
-        <div>
             <div>
                 <div>
-                    Разброс полученных выплат по возрасту сотрудников
+                    <div class="inline-block col-2 graph-block-2">
+                        <div class="chart_label">
+                            Общие выплаты по годам
+                        </div>
+                        <canvas 
+                            id="yearMainChart" 
+                            width="200" height="100">
+                        </canvas>
+                    </div
+                    ><div class="inline-block col-2 graph-block-2">
+                        <div class="chart_label">
+                            Общие выплаты по месяцам
+                        </div>
+                        <canvas 
+                            id="monthMainChart" 
+                            width="200" height="100">
+                        </canvas>
+                    </div>
                 </div>
-                <canvas 
-                    id="ageScatter" 
-                    width="200" height="100">
-                </canvas>
+            </div>
+            <div>
+                <div class="flex">
+                    <div class="inline-block col-2 graph-block-2 doughnut">
+                        <div class="chart_label">
+                            Среднее значение по отделам
+                        </div>
+                        <canvas 
+                            id="departmentAverageDoughnut" 
+                            width="200" height="100">
+                        </canvas>
+                    </div
+                    ><div class="inline-block col-2 graph-block-2 doughnut">
+                        <div class="chart_label">
+                            Среднее значение по отделам на одного человека
+                        </div>
+                        <canvas 
+                            id="departmentAverageDoughnutPerPerson" 
+                            width="200" height="100">
+                        </canvas>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="graph-block-1">
+                    <div class="chart_label">
+                        Разброс полученных выплат по возрасту сотрудников
+                    </div>
+                    <canvas 
+                        id="ageScatter" 
+                        width="200" height="100">
+                    </canvas>
+                </div>
             </div>
         </div>
+        
         <script src="main.js"></script>
     </body>
 </html>

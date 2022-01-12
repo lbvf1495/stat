@@ -1,7 +1,43 @@
+@font-face {
+    font-family: "Open Sans";
+    src: url("open-sans/OpenSans-Regular.ttf")
+}
+
+body {
+    font-family: Open Sans;
+    background: white;
+    color: black;
+}
+
+#container {
+    max-width: 800px;
+    margin: 0px auto;
+}
+
+/* .graph-block-2 {
+    
+} */
+
+.doughnut {
+    width: 30% !important;
+}
+
 .col-2 {
     width: 50%;
 }
 
 .inline-block {
     display: inline-block;
+}
+
+select {
+    font-size: 30px;
+}
+
+.chart_label {
+    text-align:center;
+}
+
+div {
+    outline: 1px solid red;
 }
