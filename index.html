@@ -1,36 +1,95 @@
 <html>
     <head>
         <link rel="stylesheet" href="styles.css">
-        <link rel="stylesheet" href="/bootstrap-4.6.1-dist/css/bootstrap.css">
-        <script src="/jquery-3.6.0.js"></script>
-        <script src="/bootstrap-4.6.1-dist/js/bootstrap.js"></script>
+        <!-- <link rel="stylesheet" 
+            href="bootstrap-4.6.1-dist/css/bootstrap.css">
+        <script src="jquery-3.6.0.js"></script>
+        <script src="bootstrap-4.6.1-dist/js/bootstrap.js"></script> -->
+        <script src="chart.js-3.7.0-dist/chart.min.js"></script>
     </head>
     <body>
-        <div id="content">
-            <ul class="nav nav-tabs" id="myTab" role="tablist">
-                <li class="nav-item" role="presentation">
-                    <a 
-                        class="nav-link active" 
-                        id="home-tab" 
-                        data-toggle="tab" 
-                        href="#stat-page" 
-                        role="tab" 
-                        aria-controls="home" 
-                        aria-selected="true"
-                    >Статистика</a>
-                </li>
-                <li class="nav-item" role="presentation">
-                    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#db-page" role="tab" aria-controls="profile" aria-selected="false"
-                    >База данных</a>
-                </li>
-            </ul>
-            <div class="tab-content" id="myTabContent">
-                <div class="tab-pane fade show active" id="stat-page" role="tabpanel" aria-labelledby="home-tab">
-                    статистика )))
+        <div>
+            Аналитические данные по зарплатам за 
+            <select>
+                <option>2021</option>
+                <option>2020</option>
+                <option>2019</option>
+                <option>2018</option>
+                <option>2017</option>
+                <option>2016</option>
+            </select>
+            год
+        </div>
+        <div>
+            <div class="inline-block col-2">
+                <div>Среднее значение:</div>
+                <div>38 500 руб.</div>
+                <div>Медианное значение:</div>
+                <div>25 750 руб.</div>
+            </div
+            ><div class="inline-block col-2">
+                <div>
+                    Среднее значение по отделам:
                 </div>
-                <div class="tab-pane fade" id="db-page" role="tabpanel" aria-labelledby="profile-tab">
-                    база (((
+                <canvas 
+                    id="averageRateByDepartment" 
+                    width="200" height="100">
+                </canvas>
+            </div>
+        </div>
+        <div>
+            <div>
+                <div class="inline-block col-2">
+                    <div>
+                        Общие выплаты по годам
+                    </div>
+                    <canvas 
+                        id="yearMainChart" 
+                        width="200" height="100">
+                    </canvas>
+                </div
+                ><div class="inline-block col-2">
+                    <div>
+                        Общие выплаты по месяцам
+                    </div>
+                    <canvas 
+                        id="monthMainChart" 
+                        width="200" height="100">
+                    </canvas>
                 </div>
+            </div>
+        </div>
+        <div>
+            <div>
+                <div class="inline-block col-2">
+                    <div>
+                        Среднее значение по отделам
+                    </div>
+                    <canvas 
+                        id="departmentAverageDoughnut" 
+                        width="200" height="100">
+                    </canvas>
+                </div
+                ><div class="inline-block col-2">
+                    <div>
+                        Среднее значение по отделам на одного человека
+                    </div>
+                    <canvas 
+                        id="departmentAverageDoughnutPerPerson" 
+                        width="200" height="100">
+                    </canvas>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div>
+                <div>
+                    Разброс полученных выплат по возрасту сотрудников
+                </div>
+                <canvas 
+                    id="ageScatter" 
+                    width="200" height="100">
+                </canvas>
             </div>
         </div>
         <script src="main.js"></script>
