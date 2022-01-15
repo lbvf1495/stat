@@ -1,10 +1,6 @@
 <html>
     <head>
         <link rel="stylesheet" href="styles.css">
-        <!-- <link rel="stylesheet" 
-            href="bootstrap-4.6.1-dist/css/bootstrap.css">
-        <script src="jquery-3.6.0.js"></script>
-        <script src="bootstrap-4.6.1-dist/js/bootstrap.js"></script> -->
         <script src="data.js"></script>
         <script src="chart.js-3.7.0-dist/chart.min.js"></script>
     </head>
@@ -18,20 +14,18 @@
                     <option value="2019">2019</option>
                     <option value="2018">2018</option>
                     <option value="2017">2017</option>
-                    <option value="2016">2016</option>
-                    <option value="2015">2015</option>
                 </select> год</h1>
             </div>
             <div class="flex">
                 <div class="inline-block col-2 graph-block-2">
                     <div>Среднее значение, руб.</div>
-                    <div id="average-value">38 500</div>
+                    <div id="average-value"></div>
                     <div>Медианное значение, руб.</div>
-                    <div id="median-value">25 750</div>
+                    <div id="median-value"></div>
                 </div
                 ><div class="inline-block col-2 graph-block-2">
                     <div class="chart-label">
-                        Среднее значение по отделам
+                        Общие выплаты по отделам
                     </div>
                     <canvas 
                         id="averageRateByDepartment" 
@@ -107,50 +101,7 @@
                                     Отдел 3
                                 </td>
                             </tr>
-                            <tr class="legend-row">
-                                <td>
-                                    <div class="legend-cube"
-                                        style="height: 20px; width: 20px; 
-                                            background-color: #2cfe26;"
-                                    ></div>
-                                </td>
-                                <td>
-                                    Отдел 4
-                                </td>
-                            </tr>
-                            <tr class="legend-row">
-                                <td>
-                                    <div class="legend-cube"
-                                        style="height: 20px; width: 20px; 
-                                            background-color: #d57b25;"
-                                    ></div>
-                                </td>
-                                <td>
-                                    Отдел 5
-                                </td>
-                            </tr>
-                            <tr class="legend-row">
-                                <td>
-                                    <div class="legend-cube"
-                                        style="height: 20px; width: 20px; 
-                                            background-color: #f6fa2d;"
-                                    ></div>
-                                </td>
-                                <td>
-                                    Отдел 6
-                                </td>
-                            </tr>
-                            <tr class="legend-row">
-                                <td>
-                                    <div class="legend-cube"
-                                        style="height: 20px; width: 20px; 
-                                            background-color: #66ffb7;"
-                                    ></div>
-                                </td>
-                                <td>
-                                    Отдел 7
-                                </td>
-                            </tr>
+                            
                         </table>
                     </div>
                     <div class="inline-block col-2 graph-block-2 doughnut">
@@ -167,7 +118,7 @@
             <div>
                 <div class="graph-block-1">
                     <div class="chart-label">
-                        Разброс полученных выплат по возрасту сотрудников
+                        Разброс полученных выплат (в среднем за месяц) по возрасту сотрудников
                     </div>
                     <canvas 
                         id="ageScatter" 
