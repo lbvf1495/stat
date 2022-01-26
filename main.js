@@ -8,7 +8,7 @@ let yearMainChart = new Chart(ctx, {
             label: 'значение',
             data: [10, 12, 19, 17, 18, 19.5, 19],
             backgroundColor: [
-                'rgba(255, 99, 132, 1)'
+                'rgba(255, 135, 171, 1)'
             ],
             borderColor: [
                 'rgba(255, 99, 132, 1)'
@@ -64,7 +64,7 @@ let monthMainChart = new Chart(ctx2, {
             label: 'значение',
             data: analysisData['monthMainChart'][2021],
             backgroundColor: [
-                'rgba(101, 25, 252, 1)'
+                'rgba(255, 135, 171, 1)'
             ],
             borderColor: [
                 'rgba(255, 99, 132, 1)'
@@ -108,10 +108,9 @@ let averageRateByDepartment = new Chart(ctx3, {
             label: 'значение',
             data: analysisData['averageRateByDepartment'][2021],
             backgroundColor: [
-                'rgba(252, 25, 252, 1)', 'rgba(255, 25, 54, 1)', 
-                'rgba(44, 25, 203, 1)', 'rgba(44, 254, 38, 1)',
-                'rgba(213, 123, 37, 1)', 'rgba(246, 250, 45, 1)',
-                'rgba(102, 255, 183, 1)'
+                'rgba(46, 196, 182, 1)', 
+                'rgba(231, 29, 54, 1)', 
+                'rgba(255, 159, 28, 1)'
             ],
             borderColor: [
                 'rgba(255, 99, 132, 1)'
@@ -155,10 +154,9 @@ let departmentAverageDoughnut = new Chart(ctx4, {
             label: 'значение',
             data: analysisData['departmentAverageDoughnut'][2021],
             backgroundColor: [
-                'rgba(252, 25, 252, 1)', 'rgba(255, 25, 54, 1)', 
-                'rgba(44, 25, 203, 1)', 'rgba(44, 254, 38, 1)',
-                'rgba(213, 123, 37, 1)', 'rgba(246, 250, 45, 1)',
-                'rgba(102, 255, 183, 1)'
+                'rgba(46, 196, 182, 1)', 
+                'rgba(231, 29, 54, 1)', 
+                'rgba(255, 159, 28, 1)'
             ],
             borderColor: [
                 'rgba(255, 99, 132, 1)'
@@ -213,10 +211,9 @@ let departmentAverageDoughnutPerPerson = new Chart(ctx5, {
             label: 'значение',
             data: analysisData['departmentAverageDoughnutPerPerson'][2021],
             backgroundColor: [
-                'rgba(252, 25, 252, 1)', 'rgba(255, 25, 54, 1)', 
-                'rgba(44, 25, 203, 1)', 'rgba(44, 254, 38, 1)',
-                'rgba(213, 123, 37, 1)', 'rgba(246, 250, 45, 1)',
-                'rgba(102, 255, 183, 1)'
+                'rgba(46, 196, 182, 1)', 
+                'rgba(231, 29, 54, 1)', 
+                'rgba(255, 159, 28, 1)'
             ],
             borderColor: [
                 'rgba(255, 99, 132, 1)'
@@ -270,7 +267,7 @@ let ageScatter = new Chart(ctx6, {
             label: 'значение',
             data: analysisData['ageScatter'][2021],
             backgroundColor: [
-                'rgba(252, 25, 252, 1)'
+                'rgba(255, 135, 171, 1)'
             ],
             borderColor: [
                 'rgba(255, 99, 132, 1)'
@@ -287,13 +284,7 @@ let ageScatter = new Chart(ctx6, {
         
         scales: {
             y: {
-                beginAtZero: true,
-                ticks: {
-                    color: "black"
-                }
-            },
-            y: {
-                beginAtZero: true,
+                beginAtZero: false,
                 ticks: {
                     color: "black"
                 }
