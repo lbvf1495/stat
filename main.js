@@ -6,7 +6,7 @@ let yearMainChart = new Chart(ctx, {
         labels: ['2017', '2018', '2019', '2020', '2021'],
         datasets: [{
             label: 'значение',
-            data: [10, 12, 19, 17, 18, 19.5, 19],
+            data: analysisData['yearMainChart'],
             backgroundColor: [
                 'rgba(255, 135, 171, 1)'
             ],
@@ -34,7 +34,7 @@ let yearMainChart = new Chart(ctx, {
         
         scales: {
             y: {
-                beginAtZero: true,
+                beginAtZero: false,
                 ticks: {
                     color: "black"
                 }
@@ -103,7 +103,7 @@ let averageRateByDepartment = new Chart(ctx3, {
     type: 'bar',
     data: {
         
-        labels: ['Отдел 1', 'Отдел 2', 'Отдел 3'],
+        labels: ['Управление', 'Преподавание', 'Творчество'],
         datasets: [{
             label: 'значение',
             data: analysisData['averageRateByDepartment'][2021],
@@ -149,7 +149,7 @@ let departmentAverageDoughnut = new Chart(ctx4, {
     type: 'doughnut',
     data: {
         
-        labels: ['Отдел 1', 'Отдел 2', 'Отдел 3'],
+        labels: ['Управление', 'Преподавание', 'Творчество'],
         datasets: [{
             label: 'значение',
             data: analysisData['departmentAverageDoughnut'][2021],
@@ -206,7 +206,7 @@ let departmentAverageDoughnutPerPerson = new Chart(ctx5, {
     type: 'doughnut',
     data: {
         
-        labels: ['Отдел 1', 'Отдел 2', 'Отдел 3'],
+        labels: ['Управление', 'Преподавание', 'Творчество'],
         datasets: [{
             label: 'значение',
             data: analysisData['departmentAverageDoughnutPerPerson'][2021],
@@ -262,7 +262,7 @@ let ageScatter = new Chart(ctx6, {
     type: 'scatter',
     data: {
         
-        labels: ['Отдел 1', 'Отдел 2', 'Отдел 3'],
+        labels: ['Управление', 'Преподавание', 'Творчество'],
         datasets: [{
             label: 'значение',
             data: analysisData['ageScatter'][2021],
